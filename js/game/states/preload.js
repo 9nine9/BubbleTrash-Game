@@ -16,6 +16,9 @@ WebFontConfig = {
 Scene.Preload.prototype = {
     
     preload : function (){
+        this.game.load.audio('BackSound', 'assets/audio/BackSound.mp3');
+        this.game.load.audio('StorySound', 'assets/audio/StorySound.mp3');
+
         this.load.image('comic1','assets/images/story/comic1.png');
         this.load.image('comic2','assets/images/story/comic2.png');
         this.load.image('comic3','assets/images/story/comic3.png');
@@ -45,9 +48,11 @@ Scene.Preload.prototype = {
         this.load.image('right','assets/images/button/right.png');
 
 
-        this.game.load.audio('cat', 'assets/audio/cat.wav');
-        this.game.load.audio('dog', 'assets/audio/dog.wav');
+        //this.game.load.audio('cat', 'assets/audio/cat.wav');
+        //this.game.load.audio('dog', 'assets/audio/dog.wav');
+        this.game.load.audio('munch', 'assets/audio/munch.mp3');
         this.game.load.audio('bounce', 'assets/audio/bounce.wav');
+
 
         this.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js');
         this.load.onLoadStart.add(this.loadStart, this);
@@ -55,11 +60,13 @@ Scene.Preload.prototype = {
     },
     
     create : function(){
-        
+        BackSound = this.game.add.audio('BackSound');
+        BackSound.volume = 0.7;
     },
     update : function(){
         if(this.ready === true){
             if(this.game.input.activePointer.isDown){
+                BackSound.play();
                 this.state.start('MainMenu');
             }
 

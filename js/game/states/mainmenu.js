@@ -3,6 +3,8 @@ Scene.MainMenu = function () {};
 Scene.MainMenu.prototype = {
     
     create : function(){
+        
+        
         var scaleRatio = window.devicePixelRatio;
 
         this.backMenu = this.game.add.sprite(this.game.world.centerX,this.game.world.centerY, 'arena');

@@ -18,6 +18,7 @@ Scene.Boot.prototype = {
         this.load.image('black_2','assets/images/character/can.png');
         this.load.image('red_1','assets/images/character/battery.png');
         this.load.image('red_2','assets/images/character/battery.png');
+
     },
     
     create : function () {

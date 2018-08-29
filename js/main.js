@@ -1,5 +1,7 @@
 var Main = function() {};
 
+var BackSound;
+
 Main.game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, '');
 
 Main.game.state.add('Boot', Scene.Boot);

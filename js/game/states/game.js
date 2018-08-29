@@ -1,26 +1,32 @@
 Scene.Game = function () {
     this.reg = {};
+   
 };
-
 Scene.Game.prototype = {
     render : function(){
         //this.game.debug.body(this.wall);
-      
     },
     create : function(){
         //sound
+      //  BackSound = this.game.add.audio('BackSound');
+      //  BackSound.volume = 0.7;
+      //  BackSound.play();
+
+         //  Here we set-up our audio sprite
+         this.fxmunch = this.game.add.audio('munch');
+         this.fxmunch.volume = 1;
 
         //  Here we set-up our audio sprite
-        this.fxcat = this.game.add.audio('cat');
+       // this.fxcat = this.game.add.audio('cat');
         //this.fxcat.allowMultiple = true;
         //this.fxcat.addMarker('cat', 0, 2.0);
-        this.fxcat.volume = 0.4;
+       // this.fxcat.volume = 0.4;
 
         //  Here we set-up our audio sprite
-        this.fxdog = this.game.add.audio('dog');
+       // this.fxdog = this.game.add.audio('dog');
         //this.fxdog.allowMultiple = true;
         //this.fxdog.addMarker('dog', 2, 4.0);
-        this.fxdog.volume = 1;
+       // this.fxdog.volume = 1;
         
         this.bouncefx = this.game.add.audio('bounce');
         this.bouncefx.volume = 0.3;
@@ -383,7 +389,8 @@ Scene.Game.prototype = {
         this.btnLeft.inputEnabled = true;
         this.btnLeft.events.onInputDown.add(function(){
             this.pressKey('left', 0.7, true);
-            this.fxcat.play();
+            //this.fxcat.play();
+             this.fxmunch.play();
         }, this);
         this.btnLeft.events.onInputUp.add(function(){
             this.pressKey('left', 1, false);
@@ -391,7 +398,8 @@ Scene.Game.prototype = {
         this.keyLeft = this.game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
         this.keyLeft.onDown.add(function(){
             this.pressKey('left', 0.7, true);
-            this.fxcat.play();
+             //this.fxcat.play();
+             this.fxmunch.play();
         }, this);
         this.keyLeft.onUp.add(function(){
             this.pressKey('left', 1, false);
@@ -400,7 +408,8 @@ Scene.Game.prototype = {
         this.btnRight.inputEnabled = true;
         this.btnRight.events.onInputDown.add(function(){
             this.pressKey('right', 0.7, true);
-            this.fxdog.play();
+            //this.fxdog.play();
+            this.fxmunch.play();
         }, this);
         this.btnRight.events.onInputUp.add(function(){
             this.pressKey('right', 1, false);
@@ -408,7 +417,8 @@ Scene.Game.prototype = {
         this.keyRight = this.game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
         this.keyRight.onDown.add(function(){
             this.pressKey('right', 0.7, true);
-            this.fxdog.play();
+             //this.fxdog.play();
+             this.fxmunch.play();
         }, this);
         this.keyRight.onUp.add(function(){
             this.pressKey('right', 1, false);

@@ -2,6 +2,11 @@ Scene.Story = function () {};
 
 Scene.Story.prototype = {
     create : function(){
+        BackSound.stop();
+        StorySound = this.game.add.audio('StorySound');
+        StorySound.volume = 0.7;
+        StorySound.play();
+
         var scaleRatio = window.devicePixelRatio;
 
         var sizeComic = scaleRatio;
@@ -38,6 +43,10 @@ Scene.Story.prototype = {
 
     back: function(){
         this.state.start('MainMenu');
+        StorySound.stop();
+        BackSound.play();
+       
+
     },
 
     prev: function(){
