@@ -61,6 +61,7 @@ Scene.Preload.prototype = {
     
     create : function(){
         BackSound = this.game.add.audio('BackSound');
+        BackSound.loopFull();
         BackSound.volume = 0.7;
     },
     update : function(){
